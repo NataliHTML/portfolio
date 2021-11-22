@@ -15,6 +15,7 @@ function browsersync() {
 			baseDir: 'app/'
 		},
 		notify: false
+
 	})
 }
 
@@ -24,6 +25,8 @@ function nunjucks() {
 		.pipe(dest('app'))
 		.pipe(browserSync.stream())
 }
+
+
 
 function styles() {
 	return src('app/scss/*.scss')

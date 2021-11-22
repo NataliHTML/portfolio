@@ -7,12 +7,11 @@
 	}
 	&__content {
 		margin-top: 30px;
-		max-width: 520px;
+		max-width: 530px;
 	}
 	&__images {
 		margin-top: 200px;
-		width: 407px;
-		height: 610px;
+		max-width: 407px;
 		margin-left: 60px;
 		img {
 			max-width: 407px;
@@ -44,12 +43,243 @@
 		font-weight: 700;
 	}
 	&__quote {
-		margin-top: 20px;
+		margin: 20px 0;
 		font-weight: 700;
 		display: inline-block;
 	}
 }
-@media (max-width: 1035px) {
+.skills-bar {
+	max-width: 600px;
+	background-color: $blue;
+	border-radius: 10px;
+	padding: 25px 30px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	text-align: left;
+	.bar {
+		margin: 20px 0;
+		&:first-child {
+			margin-top: 0;
+		}
+		.info {
+			margin-bottom: 5px;
+			span {
+				font-size: 13px;
+				font-weight: 400;
+				opacity: 0;
+				animation: showText 0.5s 1s linear forwards;
+			}
+		}
+		.progress-line {
+			height: 5px;
+			width: 100%;
+			background-color: #f0f0f0;
+			border-radius: 10px;
+			transform: scaleX(0);
+			transform-origin: left;
+			box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 1px rgba(255, 255, 255, 0.8);
+			animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+			position: relative;
+			&.html {
+				span {
+					width: 90%;
+				}
+			}
+			&.css {
+				span {
+					width: 90%;
+				}
+			}
+			&.grid {
+				span {
+					width: 60%;
+				}
+			}
+			&.flexbox {
+				span {
+					width: 85%;
+				}
+			}
+			&.git {
+				span {
+					width: 70%;
+				}
+			}
+			&.jquery {
+				span {
+					width: 60%;
+				}
+			}
+			&.bem {
+				span {
+					width: 90%;
+				}
+			}
+			&.sass {
+				span {
+					width: 80%;
+				}
+			}
+			&.gulp {
+				span {
+					width: 70%;
+				}
+			}
+			&.bootstrap {
+				span {
+					width: 55%;
+				}
+			}
+			&.modul {
+				span {
+					width: 80%;
+				}
+			}
+			&.figma {
+				span {
+					width: 95%;
+				}
+			}
+			span {
+				height: 100%;
+				width: 80%;
+				background-color: $red;
+				position: absolute;
+				border-radius: 10px;
+				transform: scaleX(0);
+				transform-origin: left;
+				animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+				&::before {
+					position: absolute;
+					content: "";
+					right: 0;
+					top: -10px;
+					height: 0;
+					width: 0;
+					border: 7px solid transparent;
+					border-bottom-width: 0px;
+					border-right-width: 0px;
+					border-top-color: #007bff;
+					opacity: 0;
+					animation: showText2 0.5s 1.5s linear forwards;
+				}
+				&::after {
+					position: absolute;
+					right: 0;
+					top: -35px;
+					color: #fff;
+					font-size: 12px;
+					font-weight: 500;
+					background-color: #007bff;
+					padding: 1px 8px;
+					border-radius: 3px;
+					opacity: 0;
+					animation: showText2 0.5s 1.5s linear forwards;
+				}
+			}
+			&.html {
+				span {
+					&::after {
+						content: "90%";
+					}
+				}
+			}
+			&.css {
+				span {
+					&::after {
+						content: "90%";
+					}
+				}
+			}
+			&.grid {
+				span {
+					&::after {
+						content: "60%";
+					}
+				}
+			}
+			&.flexbox {
+				span {
+					&::after {
+						content: "85%";
+					}
+				}
+			}
+			&.git {
+				span {
+					&::after {
+						content: "70%";
+					}
+				}
+			}
+			&.jquery {
+				span {
+					&::after {
+						content: "60%";
+					}
+				}
+			}
+			&.bem {
+				span {
+					&::after {
+						content: "90%";
+					}
+				}
+			}
+			&.sass {
+				span {
+					&::after {
+						content: "80%";
+					}
+				}
+			}
+			&.gulp {
+				span {
+					&::after {
+						content: "70%";
+					}
+				}
+			}
+			&.bootstrap {
+				span {
+					&::after {
+						content: "55%";
+					}
+				}
+			}
+			&.modul {
+				span {
+					&::after {
+						content: "80%";
+					}
+				}
+			}
+			&.figma {
+				span {
+					&::after {
+						content: "95%";
+					}
+				}
+			}
+		}
+	}
+}
+@keyframes animate {
+	100% {
+		transform: scaleX(1);
+	}
+}
+@keyframes showText {
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes showText2 {
+	100% {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 1100px) {
 	.about {
 		&__inner {
 			flex-wrap: wrap;
@@ -57,16 +287,16 @@
 		}
 		&__images {
 			width: 100%;
-			margin: 0 0 30px 0;
-			img {
-				margin: 0 auto;
-			}
+			margin: 0 auto 30px auto;
 		}
 		&__content {
 			max-width: 100%;
 			width: 100%;
 			text-align: center;
 		}
+	}
+	.skills-bar {
+		margin: 0 auto;
 	}
 }
 @media (max-width: 580px) {
@@ -97,7 +327,7 @@
 			font-size: 32px;
 		}
 		&__big-title {
-			font-size: 52px;
+			font-size: 50px;
 		}
 	}
 }
